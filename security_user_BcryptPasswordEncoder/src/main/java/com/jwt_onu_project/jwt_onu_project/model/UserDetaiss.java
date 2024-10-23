@@ -12,42 +12,42 @@ public class UserDetaiss implements UserDetails {
 
     private Users user;
 
-    public UserDetaiss(Users user){
-        this.user = user;
+    public UserDetaiss(Users user) {
+        this.user = user; // Assigns the user object to the class.
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singleton(new SimpleGrantedAuthority("USER"));
+        return Collections.singleton(new SimpleGrantedAuthority("USER")); // Grants a default "USER" role authority.
     }
 
     @Override
     public String getPassword() {
-        return user.getPassword();
+        return user.getPassword(); // Returns the user's password.
     }
 
     @Override
     public String getUsername() {
-        return user.getUsername();
+        return user.getUsername(); // Returns the user's username.
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return true;
+        return true; // Indicates the account is not expired.
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return true;
+        return true; // Indicates the account is not locked.
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return true;
+        return true; // Indicates the credentials are not expired.
     }
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return true; // Indicates the account is enabled.
     }
 }
